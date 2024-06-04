@@ -5,14 +5,11 @@ include('assets/vars.php');
 $login = new Database();
 // <----------------------------------------- login ---------------------------------------->
 if (!empty($_POST)) {
-    echo "Prueba Uno";
 
     if (isset($_POST['iniSes'])) {
         // $usuarios = $login->mostrarElementos('usuarios');
         $username = $_POST['username'];
         $password = $_POST['password'];
-
-        echo "Prueba Dos";
 
         $log = $login->buscarUsuario('usuarios', $username, $password);
 
@@ -29,14 +26,15 @@ if (!empty($_POST)) {
                         $_SESSION['adm'] = true;
                     }
 
-                    echo'<script type="text/javascript"> alert("Tarea Guardada"); window.location.href="index.php";</script>';
+                    echo "<script type='text/javascript'> alert('Bienvenido usuario $username');</script>";
+
+                    header('Location: index.php');
                 }
-            } else {
-                echo'<script type="text/javascript"> alert("Tarea Guardada"); window.location.href="index.php";</script>';
+            } else if (($log->nombre == $username && $log->contrasena != $password) || ($log->nombre != $username && $log->contrasena == $password)) {
+                echo "<script type='text/javascript'> alert('Nombre de usuario o contraseña incorrectos'); </script>";
             }
         } else if ($log != true) {
-
-            echo'<script type="text/javascript"> alert("Tarea Guardada"); window.location.href="index.php";</script>';
+            echo "<script type='text/javascript'> alert('Usuario no encontrado, inténtelo de nuevo'); </script>";
         }
 
 // <------------------------------------------- registro ------------------------------------------------------->
@@ -61,8 +59,9 @@ if (!empty($_POST)) {
                 $_SESSION['id'] = $reg->ID;
 
                 echo "<script>alert('¡Bienvenido $nombre!');window.location='login.php'</script>";
-            } else if (!$reg) {
 
+                header('Location: index.php');
+            } else if (!$reg) {
                 echo "<script>alert('Ha ocurrido un error, inténtelo de nuevo');window.location='login.php'</script>";
             }
         }
@@ -70,7 +69,7 @@ if (!empty($_POST)) {
         echo "<script>alert('Ha ocurrido un error, inténtelo de nuevo');window.location='login.php'</script>";
     }
 
-    header('Location: index.php');
+    
 }
 ?>
 
