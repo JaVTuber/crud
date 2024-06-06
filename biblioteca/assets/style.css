@@ -1,0 +1,159 @@
+/* Variables */
+:root{
+    --navy: #1C1678;
+    --lightBlue: #c3ecff;
+    --mint: #A3FFD6;
+    --clearColor: #cfffe9;
+}
+
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--lightBlue);
+}
+
+/* Estilos del encabezado */
+header {
+    background-color: var(--navy);
+    color: var(--mint);
+    padding: 20px;
+    text-align: center;
+}
+
+i.book {
+    font-size: 100px;
+}
+
+/* Estilos de la barra de navegación */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 15px 0 0 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a, button.nav {
+    text-decoration: none;
+    color: var(--navy);
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover, button.nav {
+    background-color: var(--navy);
+    color: white;
+}
+
+/* Estilos de los artículos */
+article {
+    background-color: var(--clearColor);
+    margin: 20px 20px 75px 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+article h1 {
+    border-bottom: 2px solid #545454;
+    padding-bottom: 5px;
+}
+
+article main {
+    margin-top: 10px;
+}
+
+/* Estilos de la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+table th, table td {
+    padding: 10px;
+    border: 1px solid var(--mint);
+}
+
+table th {
+    background-color: var(--navy);
+    color: white;
+    text-align: left;
+}
+
+.add {
+    color: var(--navy);
+    font-size: 1em;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.add:hover {
+    text-decoration: underline;
+}
+
+.boton {
+    font-size: 1.25em;
+    color: black;
+}
+
+/* Estilos del formulario */
+form {
+    margin-top: 20px;
+    background-color: var(--mint);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type = "text"], input[type = "number"], input[type = "date"], input[type = "email"], input[type = "password"], select {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.submit  {
+    text-decoration: none;
+    background-color: var(--navy);
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.submit:hover, button.submit:disabled {
+    background-color: #ccc;
+    color: black;
+}
+
+/* Estilos del pie de página */
+footer {
+    background-color: var(--navy);
+    color: white;
+    text-align: center;
+    padding: 7px;
+    margin: 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
